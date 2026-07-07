@@ -1,0 +1,25 @@
+name: "05 - Running on My Private Hardware"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  local-hardware-job:
+    # This is the magic key that diverts the job away from GitHub's servers to YOUR machine!
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Verify Environment Mechanics
+        run: |
+          echo "=== EXECUTING ON LOCAL MACHINE ==="
+          echo "Host Machine Hostname: $(hostname)"
+          echo "Active System User: $(whoami)"
+          echo "Present Working Directory: $(pwd)"
+
+      - name: Write Physical Artifact to Laptop
+        run: |
+          echo "GitHub Actions successfully executed this pipeline step on my laptop!" > day42-success.txt
+          echo "Created day42-success.txt file inside the workspace runner directory."
