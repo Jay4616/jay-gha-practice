@@ -6,7 +6,7 @@ on:
 jobs:
   local-hardware-job:
     # This is the magic key that diverts the job away from GitHub's servers to YOUR machine!
-    runs-on: self-hosted
+    runs-on: [self-hosted, wsl-jay-runner]
 
     steps:
       - name: Checkout repository code
