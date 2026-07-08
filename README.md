@@ -1,1 +1,1 @@
-##GitHub Actions - Matrix builds
+GitHub Actions - Matrix builds
